@@ -3,10 +3,16 @@
   Hello {{name}}
 </div>
 
+<!-- [] means property binding - Component to DOM-->
+<!-- () means event binding - DOM to Component-->
+
 <input type="text" [value]="name" (keyup)="name=$event.target.value">
-
 <input type="text" [(ngModel)]="name">
+<button (click)="changeSuitColor()">Change Suit Color</button>
+<br/>
 
-<button (click)="changeSuitColor()">
-  Change Suit Color
-</button>
+<app-customers></app-customers>
+<app-customers></app-customers>
+<app-customers></app-customers>
+<app-customers></app-customers>
+<app-customers></app-customers>

@@ -1,18 +1,21 @@
 import { Component } from '@angular/core';
+import {CustomersComponent} from "./customer/customers.component";
+import {CustomerService} from "./customer/customer.service";
 
 @Component({
-    selector: 'my-app',
-    templateUrl: 'app/app.component.html'
+  moduleId: __moduleName,
+  selector: 'my-app',
+  templateUrl: 'app/app.component.html',
+  directives: [CustomersComponent],
+  providers: [CustomerService]
 })
 export class AppComponent {
 
-  //[] means property binding - Component to DOM
-  //() means event binding - DOM to Component
   title = 'Customer App';
   name = 'Ward';
-  wardsColor = 'blue';
+  wardsColor = 'green';
 
   changeSuitColor() {
-    this.wardsColor = this.wardsColor==='blue' ? 'red' : 'blue';
+    this.wardsColor = this.wardsColor==='green' ? 'red' : 'green';
   }
 }
